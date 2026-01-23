@@ -25,8 +25,9 @@
 - [Prerequisites](#prerequisites)
 - [Success Rate by Console](#success-rate-by-console)
 - [Method 1: Apollo/OffAct (Trial Method)](#method-1-apollooffact-trial-method)
-- [Method 2: GoldHEN + Patches (Recommended)](#method-2-goldhen--patches-recommended)
-- [Method 3: Alternative Approaches](#method-3-alternative-approaches)
+- [Method 2: Official Activation with Appolo/OffAct](#method-2-official-activation-with-appolooffact)
+- [Method 3: GoldHEN + Patches (Recommended)](#method-3-goldhen--patches-recommended)
+- [Method 4: Alternative Approaches](#method-4-alternative-approaches)
 - [ID Conversion Guide](#id-conversion-guide)
 - [App Configuration](#app-configuration)
 - [Troubleshooting & Community](#troubleshooting--community)
@@ -70,6 +71,8 @@
 
 ## 🔧 Method 1: Apollo/OffAct (Trial Method)
 
+### **Official or Offline Activation Method**
+
 ### **PS4 Instructions (Firmware ≤ 9.00):**
 1. **Download Apollo Save Tool:**
    - [GitHub Repository](https://github.com/bucanero/apollo-ps4)
@@ -106,9 +109,23 @@
    - When the Offline Account list appears, select your PS5 user profile.
    - Press X on your local offline account to generate a ranodm 16-digit ID, Note this down for later.
    - Select done to activate your offline account and Reboot
+   - Download any payload injector or download [NetCat GUI](https://www.sendspace.com/file/5rz4lg) and download [Remote play payload](https://github.com/idlesauce/ps5-remoteplay-get-pin/releases)
+   - Open NetCat GUi and enter your ip address in host box and port num 9021
+   - Download Remote play payload (rp-get-pin.elf) [here](https://github.com/idlesauce/ps5-remoteplay-get-pin/releases) and browse or drag it inside NetCat GUI and select "Inject Payload".
+   - you will get your notification in ps5 after injecting Payload, 8 pin-code and activated offline or official account Encoded ID (Base64-encoded 8-byte (64-bit) Little-Endian ID) will appear.
+   - You must be in the exploit environment (where your ELF loader is listening, port 9021) to send the .elf file from your PC and the notification will popup in your screen.
+   - or you can get your Encoded ID with Python by puting the command with your 16-digit ID (Hexadecimal) or 19-digit ID (Decimal) I mentioned below.
+
+4. **Activate With Official PSN**
+   -add your username here [PSN ID Grabber](https://psn.flipscreen.games)
+   -it will provide your Account ID(Deciaml-19-Digit) for PSPlay and Encoded ID(Base64-encoded 8-byte (64-bit) Little-Endian ID) for Chiaki-ng
+   -add you Account ID which is 19 digit in [Decimal to HEX](https://www.rapidtables.com/convert/number/decimal-to-hex.html) and when activating PS4 or PS5 instead of random number add this Hex 16 digit ID and select done and reboot
+   
    ---
 
-## ⭐ Method 2: GoldHEN + Patches (Recommended for PS4)
+## Method 2: Official Activation with Appolo/OffAct
+
+## ⭐ Method 3: GoldHEN + Patches (Recommended for PS4)
 
 ### **For PS4 Firmware 9.00:**
 1. **Use GoldHEN 2.2b or higher**
@@ -130,13 +147,13 @@
 Best Setup for PS4 9.00:
 1. GoldHEN 2.2b+
 2. Remote Play Enabler
-3. Apollo for backup activation
+3. Apollo save tool for online activation
 4. Static IP + Ethernet(if available)
 ```
 
 ---
 
-## 🔄 Method 3: Alternative Approaches
+## 🔄 Method 4: Alternative Approaches
 
 ### **If All Activation Methods Fail:**
 
@@ -160,27 +177,35 @@ Best Setup for PS4 9.00:
 
 ## 🔢 ID Conversion Guide
 
-### **Only if you got a random 16-digit ID:**
+### **Only if you got a random or using official PSN account 16-digit ID:**
 
-#### **For PSPlay(Paid) (19-digit decimal):**
-- add your  offline hex activated id for online convertion to decimal which we can use in PSPlay
+#### **For Chiaki (Base64-encoded 8-byte (64-bit) Little-Endian ID):**
+-Run Python and enter this command with your Hex 16-digit-id 
+
+```python
+import base64
+activated_id = "your-16digit-offline-Id"
+print(base64.b64encode(int(activated_id, 16).to_bytes(8, 'little')).decode())
+
+example:
+import base64
+activated_id = "1234567890123456"
+print(base64.b64encode(int(activated_id, 16).to_bytes(8, 'little')).decode())
+...
+VjQSkHhWNBI=
+add VjQSkHhWNBI= in chiaki-ng encoded ID for connecting 
+```
+
+#### **For PSPlay(Paid) (19-digit decimal from 16-digit Hexadecimal offline or official activated ID):**
 - Convert your offline Hex ID to decimal using [Hex to Decimal](https://www.rapidtables.com/convert/number/hex-to-decimal.html) to use it with PSPlay.
--[Hex to Decimal](https://www.rapidtables.com/convert/number/hex-to-decimal.html)
+
+### **If Connecting With PSN Official Account
+- if activated using official account, grab your official PSN account  enter your decimal 19-digit ID which you can grab from by entering your official account [PSN ID Grabber](https://psn.flipscreen.games)
+- Enter your official account ID 19-digit in python  
 ```python
 hex_id = "YOUR_16_DIGIT_HEX"  # If you got one
 decimal_id = int(hex_id, 16)
 print(f"PSPlay ID: {decimal_id}")
-```
-
-#### **For Chiaki (Base64 encoded):**
-```python
-import base64
-
-if hex_id:  # Only if activation worked
-    encoded_id = base64.b64encode(int(hex_id, 16).to_bytes(8, 'little')).decode()
-    print(f"Chiaki ID: {encoded_id}")
-else:
-    print("Activation failed - ID conversion impossible")
 ```
 
 #### **Online Converter (Alternative):**
