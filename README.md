@@ -79,7 +79,7 @@
    ```
    Apollo → User Activation → Activate User
    ```
-   - **If successful:** You'll get a random 16-digit hex ID
+   - You'll get a random 16-digit hex ID, Note this down for later.
 
 3. **Enable Remote Play:**
    - Remote Play **OFF** → Run jailbreak → Remote Play **ON**
@@ -104,7 +104,7 @@
    - Launch HomebrewLoader → OfflineActivator
    - Press Circle (O) to close the dialog.
    - When the Offline Account list appears, select your PS5 user profile.
-   - Press X on your local offline account to generate your 16-digit ID
+   - Press X on your local offline account to generate a ranodm 16-digit ID, Note this down for later.
    - Select done to activate your offline account and Reboot
    ---
 
@@ -128,10 +128,10 @@
 ### **PS4 Cheatsheet:**
 ```
 Best Setup for PS4 9.00:
-1. GoldHEN 2.2b
+1. GoldHEN 2.2b+
 2. Remote Play Enabler
 3. Apollo for backup activation
-4. Static IP + Ethernet
+4. Static IP + Ethernet(if available)
 ```
 
 ---
@@ -153,16 +153,19 @@ Best Setup for PS4 9.00:
 - **Parsec:** Low-latency desktop streaming
 
 #### **3. Paid Alternative:**
-- **PSPlay (Android/iOS):** ~$6, more lenient with activation
+- **PSPlay (Android/iOS):** more lenient with activation
 - **Repl4y:** Another third-party app
 
 ---
 
 ## 🔢 ID Conversion Guide
 
-### **Only if you got a 16-digit ID:**
+### **Only if you got a random 16-digit ID:**
 
-#### **For PSPlay (19-digit decimal):**
+#### **For PSPlay(Paid) (19-digit decimal):**
+- add your  offline hex activated id for online convertion to decimal which we can use in PSPlay
+- Convert your offline Hex ID to decimal using [Hex to Decimal](https://www.rapidtables.com/convert/number/hex-to-decimal.html) to use it with PSPlay.
+-[Hex to Decimal](https://www.rapidtables.com/convert/number/hex-to-decimal.html)
 ```python
 hex_id = "YOUR_16_DIGIT_HEX"  # If you got one
 decimal_id = int(hex_id, 16)
