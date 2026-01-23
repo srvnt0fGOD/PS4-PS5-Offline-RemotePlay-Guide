@@ -13,7 +13,7 @@
 - **Jailbreak Type:** Some exploits work better than others
 - **Remote Play App Version:** Older versions are more lenient
 
-### 🚫 **Who Should NOT Use This Guide:**
+### 🚫 **Low Success Rate:**
 - Users who have **never linked their console to PSN**
 - Users with **PS5 firmware above 4.51** (very low success)
 - Users expecting **100% reliable connections**
@@ -45,6 +45,7 @@
 - **Static IP** for your console (router DHCP reservation)
 - **Ethernet strongly recommended** for stability
 - **5GHz WiFi** if using wireless
+- **2.4GHz WiFi** if using wireless use 720-30fps for stable connection
 - **Port forwarding may help** (TCP 9295, UDP 9296-9297)
 
 ---
@@ -52,8 +53,8 @@
 ## 📊 Success Rate by Console
 
 ### **PS4 Firmware 9.00 or Lower:**
-- **With previous PSN activation:** 80-90% success
-- **Without previous PSN activation:** 30-50% success
+- **With previous PSN activation:** high success
+- **Without previous PSN activation:** low success
 - **Best method:** GoldHEN + Remote Play Enabler
 
 ### **PS4 Firmware Above 9.00:**
@@ -61,7 +62,7 @@
 - **Recommendation:** Use alternative streaming methods
 
 ### **PS5 Any Firmware:**
-- **With previous PSN activation:** 40-60% success
+- **With previous PSN activation:** 50% success
 - **Without previous PSN activation:** <10% success
 - **Extremely YMMV (Your Mileage May Vary)**
 
@@ -78,8 +79,7 @@
    ```
    Apollo → User Activation → Activate User
    ```
-   - **If successful:** You'll get a 16-digit hex ID
-   - **If fails:** Try Method 2 instead
+   - **If successful:** You'll get a random 16-digit hex ID
 
 3. **Enable Remote Play:**
    - Remote Play **OFF** → Run jailbreak → Remote Play **ON**
@@ -100,25 +100,28 @@
    - **Old jailbreaks need elfldr** for FTP to work
 
 3. **Activation Attempt:**
+   - Create folder 'homebrew' in /data/, then move 'OfFAct' to 'homebrew' and install homebrewloader.pkg.
    - Launch HomebrewLoader → OfflineActivator
-   - **If you get a 16-digit ID:** Proceed
-   - **If it fails:** PS5 likely needs previous PSN activation
-
----
+   - Press Circle (O) to close the dialog.
+   - When the Offline Account list appears, select your PS5 user profile.
+   - Press X on your local offline account to generate your 16-digit ID
+   - Select done to activate your offline account and Reboot
+   ---
 
 ## ⭐ Method 2: GoldHEN + Patches (Recommended for PS4)
 
 ### **For PS4 Firmware 9.00:**
 1. **Use GoldHEN 2.2b or higher**
-2. **Install Remote Play Enabler:**
+2. **downlaod Remote Play Enabler [PS4REN Repository](https://github.com/SiSTR0/ps4ren)**
+3. **Install Remote Play Enabler only for 5.05 Jailbroken PlayStation 4 consoles!:**
    ```
    Homebrew → Remote Play Enabler → Install
    ```
-3. **Alternative Patches:**
+4. **Alternative Patches:**
    - **RPI (Remote Play Intercept)** - patches system calls
    - **Chiaki Enabler** - specific for Chiaki compatibility
 
-4. **Verification:**
+5. **Verification:**
    - Check if Remote Play appears in Settings
    - If visible, it's likely working
 
