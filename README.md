@@ -166,7 +166,7 @@
   - [For Chiaki-ng/Chiaki need Encoded ID (Base64-encoded 8-byte (64-bit) Little-Endian ID)](#for-chiaki-ng-chiaki-need-encoded-id-base64-encoded-8-byte-64-bit-little-endian-id)
   - [For PSPlay (Paid) need 19-digit ID](#for-psplay-paid-need-19-digit-id)
 
-##  For Chiaki-ng/Chiaki need Encoded ID (Base64-encoded 8-byte (64-bit) Little-Endian ID
+##  For Chiaki-ng/Chiaki need Encoded ID (Base64-encoded 8-byte (64-bit) Little-Endian ID)
 
 ### Conversion Methods for Chiaki-ng/Chiaki:
 
