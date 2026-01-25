@@ -138,6 +138,7 @@
    - Check if Remote Play appears in Settings
    - If visible, it's likely working
 
+---
 
 ## 🔄 Method 4: Alternative Approaches
 
