@@ -28,7 +28,7 @@
 
 ## 🎮 Prerequisites
 
-### **For ANY Method to Work:**
+### **For Both PS4 & PS5:**
 1. **Jailbroken console** with latest exploit
 2. **Static IP Address** for your console (set via router DHCP reservation)
 3. **Remote Play turned OFF before running jailbreak**
@@ -37,9 +37,9 @@
 6. **Technical patience** - be prepared for trial and error
 
 ### **Network Requirements:**
-- **Ethernet strongly recommended** for stability
+- **Ethernet recommended** for best performance
 - **5GHz WiFi** for 1080p/60fps streaming
-- **2.4GHz WiFi** if using wireless use 720-30fps for stable connection
+- **2.4GHz WiFi** use 720p/30fps for stable connection
 - **PS4 Fat/Slim** max resolution: 720p
 - **Port forwarding may help** (TCP 9295, UDP 9296-9297)
 
@@ -48,13 +48,9 @@
 ## 📊 Success Rate by Console
 
 ### **PS4 Firmware 9.00 or Lower:**
-- **Remote play Connection:** high success
+- **Remote play Connection:** high success rate
 - **Best method:** GoldHEN latest version
 - **Remote play enabler:** only for 5.05 firmware
-
-### **PS4 Firmware Above 9.00:**
-- **Any method:** <20% success
-- **Recommendation:** Use alternative streaming methods
 
 ### **PS5 Any Firmware:**
 - **Extremely YMMV (Your Mileage May Vary)**
@@ -115,9 +111,9 @@
    - Download Remote play payload [rp-get-pin.elf](https://github.com/idlesauce/ps5-remoteplay-get-pin/releases)
    - Browse or drag it inside NetCat GUI and select "Inject Payload".
    - you will get your notification in ps5 after injecting Payload
-   - 8 pin-code and activated offline or official account Encoded ID `(Base64-encoded 8-byte (64-bit) Little-Endian ID)` will popup .
-   - You must be in the exploit environment (where your ELF loader is listening, port 9021)
-   - or you can get your Encoded ID with Python by puting the command with your 16-digit ID `(Hexadecimal)` or 19-digit ID `(Decimal)` I mentioned below.
+   - 8 pin-code and activated offline or official account Encoded ID `(Base64-encoded 8-byte (64-bit) Little-Endian ID)` notification will popup .
+   - You must be in the exploit environment before injecting rp-get-pin.elf (where your ELF loader is listening, port 9021)
+   - or you can also directly retrieve your Encoded ID with Python by typing the command with your 16-digit ID `(Hexadecimal)` from activated ID or 19-digit ID `(Decimal)` from ID grabber with official Account mentioned below.
    
    ---
 
@@ -129,7 +125,7 @@
    - **Find your ID:** Enter your PSN username into the [PSN ID Grabber](https://psn.flipscreen.games)
    - **Retrieve your official Account ID** `(19-digit Decimal)` for PSPlay and your Encoded ID `(Base64-encoded 8-byte (64-bit) Little-Endian ID)` for Chiaki-ng or Chiaki from PSN ID grabber
    - Enter 19-digit ID into the [Decimal to HEX Converter](https://www.rapidtables.com/convert/number/decimal-to-hex.html) to get your **16-digit Hex ID**.
-   -  While activating local Account using Apollo or OffAct on your PS4/PS5, replace the replace the "random" User ID with your official **16-digit Hex ID**.
+   -  While activating local Account using Apollo or OffAct on your PS4/PS5, replace the "random" User ID with your official **16-digit Hex ID**.
    - Select **Done** and **Reboot** your console to apply the changes.
    
 ## ⭐ Method 3: GoldHEN + Patches (Only for PS4 5.05)
@@ -145,14 +141,12 @@
 
 ## 🔄 Method 4: Alternative Approaches
 
-### **If All Activation Methods Fail:**
-
-#### **2. Local Game Streaming (Reliable Alternative):**
+#### **1. Local Game Streaming (Reliable Alternative):**
 - **Moonlight + Sunshine:** Stream from gaming PC
 - **Steam Link:** Stream Steam games
 - **Parsec:** Low-latency desktop streaming
 
-#### **3. Paid Alternative:**
+#### **2. Paid Alternative:**
 - **PSPlay:** more lenient with activation
 - **Repl4y:** Another third-party app
 
@@ -168,21 +162,22 @@
 
 ### **Convert Activated Official and Offline Account for Connecting Remote Play**
 
-  - [For Chiaki-ng/Chiaki need Encoded ID (Base64-encoded 8-byte (64-bit) Little-Endian ID](#for-chiaki-ng-chiaki-need-encoded-id-base64-encoded-8-byte-64-bit-little-endian-id)
+  - [For Chiaki-ng/Chiaki need Encoded ID (Base64-encoded 8-byte (64-bit) Little-Endian ID)](#for-chiaki-ng-chiaki-need-encoded-id-base64-encoded-8-byte-64-bit-little-endian-id)
   - [For PSPlay (Paid) need 19-digit ID](#for-psplay-paid-need-19-digit-id)
 
 ##  For Chiaki-ng/Chiaki need Encoded ID (Base64-encoded 8-byte (64-bit) Little-Endian ID
 
-### Conversion Methods:
+### Conversion Methods for Chiaki-ng/Chiaki:
 
-#### 2. Activated Account Hexadecimal (16-digit) → Base64 Encoded ID for Chiaki
+#### 1. Activated Account Hexadecimal (16-digit) → Base64 Encoded ID for Chiaki
+  - In `Python`
 
 ```python
 import base64
 activated_id = "your-16digit-offline-Id"
 print(base64.b64encode(int(activated_id, 16).to_bytes(8, 'little')).decode())
 ```
-example:
+`example:`
 
 ```
 >>> import base64
