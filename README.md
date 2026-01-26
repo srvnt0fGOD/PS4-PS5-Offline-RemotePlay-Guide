@@ -1,11 +1,17 @@
 # PS4-PS5-Offline-RemotePlay-Connect
 Connecting Chiaki and Chiaki-ng without PSN account
 
+<details>
+<summary><strong>⚠️ Click to read important disclaimer</strong></summary>
+
+**⚠️ DISCLAIMER:** This guide is for educational and informational purpose only. Console modification may violate Sony's ToS, void warranties, and risk bans/data loss. You assume all risks. Always backup data. Use at your own discretion, the author provides no warranties
+
+You assume all risks. Always backup data first.
+</details>
+
 # PS4-PS5 Remote Play Guide (Unofficial)
 
-## ⚠️ IMPORTANT DISCLAIMER & SUCCESS RATE WARNING
-
-**READ THIS FIRST:** This guide documents methods that **have worked for some users on specific setups**, but **success is NOT guaranteed**. These methods bypass Sony's official activation process and results vary widely based on:
+**READ THIS FIRST:** Make sure to create a backup for your games/apps save file. This guide documents methods that **have worked for some users on specific setups**, but **success is NOT guaranteed**. These methods bypass Sony's official activation process and results vary widely based on:
 
 ### ⚡ **Success Rate Factors:**
 - **Firmware Version:** Older firmwares work better
@@ -22,9 +28,9 @@ Connecting Chiaki and Chiaki-ng without PSN account
 - [Method 3: Alternative Approaches](#method-3-alternative-approaches)
 - [ID Conversion Guide](#id-conversion-guide)
 - [App Configuration](#app-configuration)
-- [Quick Test - Does This Work For You?](#quick-test-does-this-work-for-you)
-- [Common Errors](#common-errors)
 - [Troubleshooting & Community](#troubleshooting--community)
+- [Additional Resources](#additional-resources)
+- [IMPORTANT SAFETY & BACKUP WARNING](important-safety--backup-warning)
 
 ---
 
@@ -164,7 +170,7 @@ Connecting Chiaki and Chiaki-ng without PSN account
 ## 🔢 ID Conversion Guide 
 
 ### **Required Software:**
-- **Python latest `version`**
+- **Python latest Version**
 - [Official Site](https://www.python.org/downloads/)
 - Microsoft Store (Windows)
 
@@ -174,15 +180,14 @@ Connecting Chiaki and Chiaki-ng without PSN account
 
 ### Conversion Methods for Chiaki-ng/Chiaki:
 
-#### 1. Convert PS4/PS5 Activated User Account Hexadecimal (16-digit) to Base64 Encoded ID for Chiaki
-  - In `Python`
-
+#### 1. Convert PS4/PS5 Activated User Account Hexadecimal (16-digit) to Base64 Encoded ID for Chiaki-ng/Chiaki
+`Python`
 ```python
 import base64
 activated_id = "your-16digit-offline-Id"
 print(base64.b64encode(int(activated_id, 16).to_bytes(8, 'little')).decode())
 ```
-`example`
+**Example:**
 ```python
 >>> import base64
 ... activated_id = "1234567890ABCDEF"
@@ -190,7 +195,7 @@ print(base64.b64encode(int(activated_id, 16).to_bytes(8, 'little')).decode())
 ...
 782rkHhWNBI=
 ```
-add `VjQSkHhWNBI=` in chiaki-ng/Chiaki encoded ID for connecting remote play
+add `782rkHhWNBI=` in chiaki-ng/Chiaki encoded ID for connecting remote play
 
 ---
 
@@ -198,15 +203,14 @@ add `VjQSkHhWNBI=` in chiaki-ng/Chiaki encoded ID for connecting remote play
 
 #### 1. Convert PS4/PS5 Activated User Account Hexadecimal (16-digit) to Decimal (19-digit) for PSPlay
 
-  - Use this [Hex to Decimal Converter](https://www.rapidtables.com/convert/number/hex-to-decimal.html):
+  - Use [Hex to Decimal Converter](https://www.rapidtables.com/convert/number/hex-to-decimal.html):
   - Or use `Python` to convert Hex to Decimal
-  - 
 ```python
 hex_id = "1234567890ABCDEF"  # Your 16-digit hex ID
 decimal_id = int(hex_id, 16)
 print(f"19-digit Decimal ID: {decimal_id}")
 ```
-`example`
+**Example:**
 ```python
 >>> hex_id = "1234567890ABCDEF"
 ... decimal_id = int(hex_id, 16)
@@ -216,11 +220,10 @@ print(f"19-digit Decimal ID: {decimal_id}")
 ```
 ---
 
-### **BONUS** *Optional*
+### 🎯 BONUS: Additional Conversions
 
 #### 1. Convert Decimal (19-digit) to Base64 Encoded ID for Chiaki-ng/Chiaki
-
-  - Retreive Decimal (19-digit) Official PSN ID from [PSN ID Grabber](https://psn.flipscreen.games) 
+- Retreive Decimal (19-digit) Official PSN ID from [PSN ID Grabber](https://psn.flipscreen.games) 
 
 `Python`
 ```python
@@ -228,7 +231,7 @@ import base64
 decimal_id = 1311768467294899695 # Your 19-digit decimal ID
 print(base64.b64encode(decimal_id.to_bytes(8, 'little')).decode())
 ```
-`example`
+**Example:**
 ```python
 >>> import base64
 ... decimal_id = 1311768467294899695
@@ -236,9 +239,10 @@ print(base64.b64encode(decimal_id.to_bytes(8, 'little')).decode())
 ...
 782rkHhWNBI=
 ```
+
 #### 2. Convert Decimal (19-digit) to Hexadecimal (16-digit) from Python or Decimal to Hex converter
 
-  - This is for activating your PS4/PS5 with Apolo or OffAct retrieved from [PSN ID Grabber](https://psn.flipscreen.games) with your official PSN account
+  - After activating PS4/PS5 with Apolo/OffAct retrieved Decimal (19-digit) from [PSN ID Grabber](https://psn.flipscreen.games) with your official PSN account
   - Use this [Decimal to Hex Converter](https://www.rapidtables.com/convert/number/hex-to-decimal.html) OR Python:
 
 ```python
@@ -246,7 +250,7 @@ decimal_id = 1311768467294899695
 hex_id = f'"{decimal_id:016X}"'
 print(f"16-digit Hex ID: {hex_id}")
 ```
-`example`
+**Example:**
 ```python
 >>> decimal_id = 1311768467294899695
 ... hex_id = f'"{decimal_id:016X}"'
@@ -254,149 +258,110 @@ print(f"16-digit Hex ID: {hex_id}")
 ...
 16-digit Hex ID: "1234567890ABCDEF"
 ```
----
 
 ---
 
 ## 📱 App Configuration
 
 ### **Chiaki-ng/Chiaki Setup:**
-**Download:** [chiaki-ng](https://github.com/streetpea/chiaki-ng)
-or [Chiaki GitHub](https://github.com/thestr4ng3r/chiaki)  
-```
-Settings if activation WORKED:
-- Host: Console IP (e.g., `192.168.1.50`)
-- AccountID: Encoded ID (obtained from Python or PSN Grabber)
-- Remote Play PIN: 8-digit from PS4/PS5
-- Console PIN [Optional] This is your 4-digit PSN profile login passcode (Default is 0000)
-- PS4: Select 8.0+ (Compatible with 9.00, 11.00, and current firmwares)
-- PS5: Select PS5
 
-Settings if Remote Play Connection FAILED:
-- Activate PS4/PS5 with Apolo or OffAct using following ID's rather than the generated ID: 
-- Try "123456789ABCDEF0"
-- Try "0000000000000000"
-- Try "ffffffffffffffff"
-- Try "DEADBEEFCAFEBABE"
-```
+**Download:** [chiaki-ng](https://github.com/streetpea/chiaki-ng)
+or [Chiaki](https://github.com/thestr4ng3r/chiaki)  
+- Settings if Activation WORKED:
+- **Host:** Console IP (e.g., `192.168.1.50`)
+- **AccountID:** Encoded ID (obtained from Python conversion)
+- **Remote Play PIN:** 8-digit from PS4/PS5
+- **Console PIN [Optional]:** 4-digit PSN profile login passcode (Default: 0000)
+- **PS4:** Select 8.0+ (compatible with 9.00+)
+- **PS5:** Select PS5
+
+**If Remote Play Connection FAILED**
+- Activate PS4/PS5 with Apolo/OffAct using following ID's rather than the generated random ID: 
+  - Try "123456789ABCDEF0"
+  - Try "0000000000000000"
+  - Try "ffffffffffffffff"
+  - Try "DEADBEEFCAFEBABE"
 
 ### **PSPlay (Paid) Setup:**
 **Info:** [PSPlay Repository](https://github.com/streamingdv/PSPlay-Application-Hosting)
 
-```
 Manual Registration:
 1. Uncheck "automatic connection"
 2. Advanced → Register manually
-3. IP + 19-digit ID (if you have it)
-4. 8-digit PIN
-```
+3. Enter: Console IP + 19-digit Decimal ID
+4. Enter: 8-digit PIN
 
-### **Performance Tips:**
-```
-Ethernet + 1080p @ 60fps
-5GHz WiFi + 1080p @ 30fps
-2.4GHz WiFi + 720p @ 30fps
-PS4 Fat/Slim: Max 720p
-```
-
----
-
-## 🧪 Quick Test - Does This Work For You?
-
-**Step 1 (Before Jailbreak):**
-1. Settings → Remote Play → Enable
-2. If it works and shows PIN: ✅ Good chance
-3. If it crashes/errors: ❌ Low chance
-
-**Step 2 (After Jailbreak):**
-1. Same settings menu
-2. If crashes: Jailbreak interfering
-3. Solution: Try connection BEFORE jailbreak
-
-## 🧪 Quick Test - Does This Work For You?
-
-**Step 1 (Before Jailbreak):**
-1. Settings → Remote Play → Enable
-2. If it works and shows PIN: ✅ Good chance
-3. If it crashes/errors: ❌ Low chance
-
-**Step 2 (After Jailbreak):**
-1. Same settings menu
-2. If crashes: Jailbreak interfering
-3. Solution: Try connection BEFORE jailbreak
-
----
-
-## ❌ Common Errors
-
-**Error: "Registration Failed" (Chiaki)**
-- Cause: Wrong Encoded ID
-- Fix: Double-check Python conversion
-
-**Error: "Cannot Connect to Console"**
-- Cause: Jailbreak blocking
-- Fix: Try connection without jailbreak first
+### **Performance Settings:**
+- **Ethernet:** 1080p @ 60fps
+- **5GHz WiFi:** 1080p @ 60fps
+- **2.4GHz WiFi:** 720p @ 30fps
+- **PS4 Fat/Slim:** Maximum 720p
 
 ---
 
 ## 🔍 Troubleshooting & Community
----
 
-### **Common "It Doesn't Work" Scenarios:**
+### **Common Issues & Solutions:**
 
-#### **Scenario 1: No PSN history on console**
-- **Reality:** Very low chance of success
-- **Fallback:** Alternative streaming methods
-
-#### **Scenario 2: Activation succeeds but can't connect**
+#### **Issue 1: Activation succeeds but can't connect**
 1. Check firewall settings
 2. Verify static IP assignment
 3. Try different port settings
 4. Test with phone hotspot (isolate network issues)
 
-#### **Scenario 3: Works intermittently**
+#### **Issue 2: Intermittent Connections**
 - Typical for unofficial methods
 - Keep Remote Play disabled until ready to stream
+- Jailbreak patches interfering
 - Re-run jailbreak before each session
 
 ### **Diagnostic Checklist:**
-- [ ] Console shows Remote Play in Settings
-- [ ] You have a 16-digit hex ID (or had one previously)
+- [ ] Remote Play shows in Settings (without jailbreak)
+- [ ] Valid 16-digit hex ID obtained
 - [ ] Static IP configured correctly
 - [ ] Ports forwarded (if behind NAT)
 - [ ] Trying multiple Chiaki/PSPlay versions
 
 ---
 
-## 💬 Community & Support
+### 💬 Community & Support
 
 ### **Where to Get Help:**
 - **Reddit:** r/ps4homebrew, r/ps5homebrew
 - **Discord:** Modded Warfare, PSX-Place
 - **Forums:** PSX-Place.com, GBAtemp.net
 
-### **What to Ask:**
-```
+### **When Asking for Help, Include:**
 Include in your help request:
 1. Console model and firmware
 2. Jailbreak method used
-3. Was console ever on PSN?
-4. What error you're getting
-5. What you've already tried
-```
+3. Specific error messages
+4. What you've already tried
 
 ---
 
-## ✅ Final Reality Check
+## 📚 Additional Resources
 
-### **Before You Invest Time:**
-1. **Check your console's PSN history** - crucial for success
+### **Video Tutorials:**
+- [Modded Warfare YouTube](https://www.youtube.com/@MODDEDWARFARE)
+
+### **Community Discussions:**
+- [PSX-Place Remote Play Thread](https://www.psx-place.com/threads/remote-play-on-jailbroken-consoles.XXXXX/)
+
+### **Tools & Utilities:**
+- **GoldHEN Cheat Manager:** Includes system patches
+- **Al-Azif DNS:** For older firmware jailbreaks
+
+---
+
+### ✅ Final Reality Check
+
+#### **Before You Invest Time:**
+1. **Verify PSN history** - Crucial for Success
 2. **Verify firmware compatibility** - 12.52 ≤ 9.00 for PS4
-3. **Have realistic expectations** - this is reverse engineering
-4. **Prepare alternatives** - local game streaming might be easier
+3. **Set realistic expectations** - this is reverse engineering
 
-### **If It Works:**
-- Consider yourself lucky
+#### **If It Works:**
 - Document your exact setup
 - Share with community
 - **Don't update firmware!**
@@ -410,10 +375,14 @@ Include in your help request:
 
 ---
 
-___
+**Repository Value:** This guide serves as a comprehensive collection of unofficial/official Remote Play on jailbroken consoles. It provides realistic expectations while offering multiple approaches for different scenarios.
 
----
+## ⚠️ IMPORTANT SAFETY & BACKUP WARNING
 
-**Repository Value:** This guide serves as a comprehensive collection of ALL known methods, their success rates, and realistic expectations. It helps users avoid wasting time on impossible setups while providing multiple paths for those with compatible systems.
+**READ BEFORE PROCEEDING:**
 
-**Remember:** Jailbreak scene evolves constantly. What doesn't work today might work tomorrow with new exploits or patches. Bookmark this repository and check back after major jailbreak updates.
+**Remember:** before installing games, apps, patches, modifying system files etc......., In jailbreak exploits, some error can corrupt your data or sometime all your data disappear. Always be cautios and beleive me I know how it feels when you're playing a game, already completed 5%/7% and because of you other user  accounts saves also disappear and you need to make excuses to other that because of power outage (nor a lie, power outage common here) all our data wiped out from the directry and yeah you cant recover disappeared data. You can recover your corrupt data with Itemzflow/Apollo. Jokes aside, Last but not least, if you can make sure to support all the creators/developers whose tools are mentioned in this guide and also all other who involves in this big jailbreak community.
+Jailbreak scene evolves constantly. What doesn't work today might work tomorrow with new exploits or patches. Regularly check community forums for updates and breakthroughs.
+Last Updated: [27/01/2026]
+Status: Informational/Educational Material
+
