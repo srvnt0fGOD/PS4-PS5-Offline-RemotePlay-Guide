@@ -1,13 +1,9 @@
 # PS4-PS5-Offline-RemotePlay-Connect
 Connecting Chiaki and Chiaki-ng without PSN account
 
-<details>
-<summary><strong>⚠️ Click to read important disclaimer</strong></summary>
-
 **⚠️ DISCLAIMER:** This guide is for educational and informational purpose only. Console modification may violate Sony's ToS, void warranties, and risk bans/data loss. You assume all risks. Always backup data. Use at your own discretion, the author provides no warranties
+ - You assume all risks. Always backup data first.
 
-You assume all risks. Always backup data first.
-</details>
 
 # PS4-PS5 Remote Play Guide (Unofficial)
 
@@ -17,7 +13,7 @@ You assume all risks. Always backup data first.
 - **Firmware Version:** Older firmwares work better
 - **Jailbreak Version:** Use latest compatible jailbreak
 - **Network Configuration:** Static IP and proper port forwarding help
-- 
+
 ---
 
 ## 📋 Table of Contents
@@ -30,7 +26,7 @@ You assume all risks. Always backup data first.
 - [App Configuration](#app-configuration)
 - [Troubleshooting & Community](#troubleshooting--community)
 - [Additional Resources](#additional-resources)
-- [IMPORTANT SAFETY & BACKUP WARNING](important-safety--backup-warning)
+- [IMPORTANT SAFETY & BACKUP WARNING](#important-safety--backup-warning)
 
 ---
 
@@ -79,7 +75,7 @@ You assume all risks. Always backup data first.
 
 3. **Enable Remote Play:**
    - Remote Play **OFF** → Run jailbreak → Remote Play **ON** *to avoid crash*
-
+   
 ---
 
 ### **PS5 Instructions:**
@@ -149,10 +145,13 @@ You assume all risks. Always backup data first.
 - Replace "random" User ID with your official **16-digit Hex ID**.
 - Select **Done** and **Reboot** to apply changes.
 - You can also convert Decimal to Hex with Python, Mentioned Below at ID Conversion Guide:
-   
+- 
 ---
 
 ## 🔄 Method 3: Alternative Approaches
+
+<details>
+<summary><strong>👉Click to read Alternative Approaches</strong></summary>
 
 ### **If Methods 1-3 Fail:**
 
@@ -164,6 +163,7 @@ You assume all risks. Always backup data first.
 #### **2. Paid Alternative:**
 - **PSPlay (Paid):** More lenient with activation
 - **Repl4y:** Another third-party app
+</details>
 
 ---
 
@@ -356,18 +356,13 @@ Include in your help request:
 
 ### ✅ Final Reality Check
 
-#### **Before You Invest Time:**
-1. **Verify PSN history** - Crucial for Success
-2. **Verify firmware compatibility** - 12.52 ≤ 9.00 for PS4
-3. **Set realistic expectations** - this is reverse engineering
-
 #### **If It Works:**
 - Document your exact setup
 - Share with community
 - **Don't update firmware!**
 - Stick to `9.00` firmware
 
-### **If It Doesn't Work:**
+#### **If It Doesn't Work:**
 - You're not alone - many face this
 - Consider official Remote Play (requires PSN)
 - Look into PC game streaming alternatives
@@ -381,7 +376,7 @@ Include in your help request:
 
 **READ BEFORE PROCEEDING:**
 
-**Remember:** before installing games, apps, patches, modifying system files etc......., In jailbreak exploits, some error can corrupt your data or sometime all your data disappear. Always be cautios and beleive me I know how it feels when you're playing a game, already completed 5%/7% and because of you other user  accounts saves also disappear and you need to make excuses to other that because of power outage (nor a lie, power outage common here) all our data wiped out from the directry and yeah you cant recover disappeared data. You can recover your corrupt data with Itemzflow/Apollo. Jokes aside, Last but not least, if you can make sure to support all the creators/developers whose tools are mentioned in this guide and also all other who involves in this big jailbreak community.
+**Remember:** before installing games, apps, patches, modifying system files etc......., In jailbreak exploits, some error can corrupt your data or sometime all your data disappear. Always be cautios and beleive me I know how it feels when you're playing a game, already completed 5%/7% and because of you other user  accounts saves also disappear and you need to make excuses to other that because of power outage (nor a lie, power outage common here) all our data wiped out from the directry and yeah you cant recover disappeared data. You can recover your corrupt data with Itemzflow/Apollo. Jokes aside, Last but not least, if you can make sure to support all the developers/creators whose tools & utilities are mentioned in this guide and also all other who involves in this big jailbreak community.
 Jailbreak scene evolves constantly. What doesn't work today might work tomorrow with new exploits or patches. Regularly check community forums for updates and breakthroughs.
 Last Updated: [27/01/2026]
 Status: Informational/Educational Material
