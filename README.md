@@ -2,7 +2,7 @@
 Connecting Chiaki and Chiaki-ng without PSN account
 
 **⚠️ DISCLAIMER:** This guide is for educational and informational purpose only. Console modification may violate Sony's ToS, void warranties, and risk bans/data loss. You assume all risks. Always backup data. Use at your own discretion, the author provides no warranties
- - You assume all risks. Always backup data first.
+ - Always backup data first.
 
 
 # PS4-PS5 Remote Play Guide (Unofficial)
@@ -380,4 +380,3 @@ Include in your help request:
 Jailbreak scene evolves constantly. What doesn't work today might work tomorrow with new exploits or patches. Regularly check community forums for updates and breakthroughs.
 Last Updated: [27/01/2026]
 Status: Informational/Educational Material
-
