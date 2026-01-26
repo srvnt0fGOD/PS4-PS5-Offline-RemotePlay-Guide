@@ -125,8 +125,9 @@
    - **Find your ID:** Enter your PSN username into the [PSN ID Grabber](https://psn.flipscreen.games)
    - **Retrieve your official Account ID** `(19-digit Decimal)` for PSPlay and your Encoded ID `(Base64-encoded 8-byte (64-bit) Little-Endian ID)` for Chiaki-ng or Chiaki from PSN ID grabber
    - Enter 19-digit ID into the [Decimal to HEX Converter](https://www.rapidtables.com/convert/number/decimal-to-hex.html) to get your **16-digit Hex ID**.
-   -  While activating local Account using Apollo or OffAct on your PS4/PS5, replace the "random" User ID with your official **16-digit Hex ID**.
+   - While activating local Account using Apollo or OffAct on your PS4/PS5, replace the "random" User ID with your official **16-digit Hex ID**.
    - Select **Done** and **Reboot** your console to apply the changes.
+   - You can also convert Decimal to Hex with Python, Mentioned Below at ID Conversion Guide:
    
 ## ⭐ Method 3: GoldHEN + Patches (Only for PS4 5.05)
 
@@ -170,7 +171,7 @@
 
 ### Conversion Methods for Chiaki-ng/Chiaki:
 
-#### 1. Activated Account Hexadecimal (16-digit) → Base64 Encoded ID for Chiaki
+#### 1. Convert PS4/PS5 Activated User Account Hexadecimal (16-digit) to Base64 Encoded ID for Chiaki
   - In `Python`
 
 ```python
@@ -178,97 +179,105 @@ import base64
 activated_id = "your-16digit-offline-Id"
 print(base64.b64encode(int(activated_id, 16).to_bytes(8, 'little')).decode())
 ```
-`example:`
-
-```
+`example`
+```python
 >>> import base64
-... activated_id = "1234567890123456"
+... activated_id = "1234567890ABCDEF"
 ... print(base64.b64encode(int(activated_id, 16).to_bytes(8, 'little')).decode())
 ...
-VjQSkHhWNBI=
+782rkHhWNBI=
 ```
-add `VjQSkHhWNBI=` in chiaki-ng/Chiaki encoded ID for connecting 
-
-
-#### 3. Decimal (19-digit) for Official Account  → Base64 Encoded ID for Chiaki  (Bonus)
-```python
-import base64
-
-# For 19-digit decimal ID (from PSPlay conversion)
-activated_id = 1234567890123456789  # Your 19-digit ID
-encoded_id = base64.b64encode(activated_id.to_bytes(8, 'little')).decode()
-print(f"Encoded ID for Chiaki: {encoded_id}")
-```
+add `VjQSkHhWNBI=` in chiaki-ng/Chiaki encoded ID for connecting remote play
 
 ---
 
+##  For PSPlay (Paid) need 19-digit ID
 
-#### 1. Hexadecimal (16-digit) → Decimal (19-digit) for PSPlay
+#### 1. Convert PS4/PS5 Activated User Account Hexadecimal (16-digit) to Decimal (19-digit) for PSPlay
 
-Use this [Hex to Decimal Converter](https://www.rapidtables.com/convert/number/hex-to-decimal.html) OR Python:
-
+  - Use this [Hex to Decimal Converter](https://www.rapidtables.com/convert/number/hex-to-decimal.html):
+  - Or use `Python` to convert Hex to Decimal
+  - 
 ```python
 hex_id = "1234567890ABCDEF"  # Your 16-digit hex ID
 decimal_id = int(hex_id, 16)
-print(f"19-digit ID: {decimal_id}")
+print(f"19-digit Decimal ID: {decimal_id}")
 ```
-
-
+`example`
 ```python
-import base64
-activated_id = "your-16digit-offline-Id"
-print(base64.b64encode(int(activated_id, 16).to_bytes(8, 'little')).decode())
-
-example:
-import base64
-activated_id = "1234567890123456"
-print(base64.b64encode(int(activated_id, 16).to_bytes(8, 'little')).decode())
+>>> hex_id = "1234567890ABCDEF"
+... decimal_id = int(hex_id, 16)
+... print(f"19-digit Decimal ID: {decimal_id}")
 ...
-VjQSkHhWNBI=
-add VjQSkHhWNBI= in chiaki-ng encoded ID for connecting 
+19-digit Decimal ID: 1311768467294899695 
 ```
+---
 
-#### **For PSPlay(Paid)
+### **BONUS** *Optional*
 
-#### **Offline Activatd (need 19-digit decimal ID converted from 16-digit Hex ID):**
-- Convert your activated offline 16-digit Hex ID to 19-digit decimal ID using [Hex to Decimal](https://www.rapidtables.com/convert/number/hex-to-decimal.html) for connect with PSPlay.
+#### 1. Convert Decimal (19-digit) to Base64 Encoded ID for Chiaki-ng/Chiaki
 
-### **If Connecting With PSN Official Account**
-- if activated using official account, grab your official PSN account 19 digit for PSPlay(Paid)
-- Enter your official account username in [PSN ID Grabber](https://psn.flipscreen.games)
--  
+  - Retreive Decimal (19-digit) Official PSN ID from [PSN ID Grabber](https://psn.flipscreen.games) 
+
+`Python`
 ```python
-hex_id = "YOUR_16_DIGIT_HEX"  # If you got one
-decimal_id = int(hex_id, 16)
-print(f"PSPlay ID: {decimal_id}")
+import base64
+decimal_id = 1311768467294899695 # Your 19-digit decimal ID
+print(base64.b64encode(decimal_id.to_bytes(8, 'little')).decode())
 ```
+`example`
+```python
+>>> import base64
+... decimal_id = 1311768467294899695
+... print(base64.b64encode(decimal_id.to_bytes(8, 'little')).decode())
+...
+782rkHhWNBI=
+```
+#### 2. Convert Decimal (19-digit) to Haxadecimal (16-digit) from Python or Decimal to Hex converter
 
-#### **Online Converter (Alternative):**
-- [Hex to Decimal](https://www.rapidtables.com/convert/number/hex-to-decimal.html)
-- **Note:** Only useful if activation succeeded
+  - This is for activating your PS4/PS5 with Apolo or OffAct retreived from [PSN ID Grabber](https://psn.flipscreen.games) with your official PSN account
+  - Use this [Decimal to Hex Converter](https://www.rapidtables.com/convert/number/hex-to-decimal.html) OR Python:
+
+```python
+decimal_id = 1311768467294899695
+hex_id = f'"{decimal_id:016X}"'
+print(f"16-digit Hex ID: {hex_id}")
+```
+`example`
+```python
+>>> decimal_id = 1311768467294899695
+... hex_id = f'"{decimal_id:016X}"'
+... print(f"16-digit Hex ID: {hex_id}")
+...
+16-digit Hex ID: "1234567890ABCDEF"
+```
+---
 
 ---
 
 ## 📱 App Configuration
 
-### **Chiaki Setup:**
-**Download:** [Chiaki GitHub](https://github.com/thestr4ng3r/chiaki) or [Chiaki4Deck](https://github.com/streetpea/chiaki4deck)
-
+### **Chiaki-ng/Chiaki Setup:**
+**Download:** [chiaki-ng](https://github.com/streetpea/chiaki-ng)
+or [Chiaki GitHub](https://github.com/thestr4ng3r/chiaki)  
 ```
 Settings if activation WORKED:
-- Host: Console IP
-- Encoded ID: From Python conversion
-- PIN: 8-digit from PS4/PS5
-- PS4: Select 8.0+ (9.00 works with 8.0+)
+- Host: Console IP (e.g., `192.168.1.50`)
+- AccountID: Encoded ID (obtained from Python or PSN Grabber)
+- Remote Play PIN: 8-digit from PS4/PS5
+- Console PIN [Optional] This is your 4-digit PSN profile login passcode (Default is 0000)
+- PS4: Select 8.0+ (Compatible with 9.00, 11.00, and current firmwares)
 - PS5: Select PS5
 
-Settings if activation FAILED:
-- Try leaving ID blank (some builds work)
-- Try using console nickname
-- Try "0000000000000000" as hex ID
+Settings if Remote Play Connection FAILED:
+- Activate PS4/PS5 with Apolo or OffAct using following ID's rather than the generated ID: 
+- Try "123456789ABCDEF0"
+- Try "0000000000000000"
+- Try "ffffffffffffffff"
+- Try "DEADBEEFCAFEBABE"
 ```
 
-### **PSPlay Setup:**
+### **PSPlay (Paid) Setup:**
 **Info:** [PSPlay Repository](https://github.com/streamingdv/PSPlay-Application-Hosting)
 
 ```
@@ -295,7 +304,6 @@ PS4 Fat/Slim: Max 720p
 
 #### **Scenario 1: No PSN history on console**
 - **Reality:** Very low chance of success
-- **Try:** Different jailbreak (GoldHEN vs Mira)
 - **Fallback:** Alternative streaming methods
 
 #### **Scenario 2: Activation succeeds but can't connect**
@@ -340,17 +348,8 @@ Include in your help request:
 ## 📚 Additional Resources
 
 ### **Working Proof (For Reference):**
-- [Video Tutorial - PS4 9.00 Remote Play](https://www.youtube.com/watch?v=EXAMPLE)
+- [Video Tutorial - Moded Warfare]([https://www.youtube.com/watch?v=EXAMPLE](https://www.youtube.com/@MODDEDWARFARE))
 - [PSX-Place Success Thread](https://www.psx-place.com/threads/EXAMPLE)
-
-### **Alternative Tools:**
-- **GoldHEN Cheat Manager** - includes patches
-- **Karo's Host** - alternative jailbreak with patches
-- **Al-Azif's DNS** - for older firmwares
-
-### **Python Downloads (For ID Conversion):**
-- [Official Python](https://www.python.org/downloads/)
-- Microsoft Store (Windows)
 
 ---
 
@@ -358,7 +357,7 @@ Include in your help request:
 
 ### **Before You Invest Time:**
 1. **Check your console's PSN history** - crucial for success
-2. **Verify firmware compatibility** - ≤9.00 for PS4
+2. **Verify firmware compatibility** - 12.52 ≤ 9.00 for PS4
 3. **Have realistic expectations** - this is reverse engineering
 4. **Prepare alternatives** - local game streaming might be easier
 
@@ -367,6 +366,7 @@ Include in your help request:
 - Document your exact setup
 - Share with community
 - **Don't update firmware!**
+- Stick to `9.00` firmware
 
 ### **If It Doesn't Work:**
 - You're not alone - many face this
@@ -377,22 +377,6 @@ Include in your help request:
 ---
 
 ## 🎯 Quick Start Decision Tree
-
-```
-Start Here
-    ↓
-Was console EVER on PSN?
-    ↓
-Yes → Is firmware ≤9.00 (PS4) or ≤4.51 (PS5)?
-    ↓
-Yes → Try Method 2 (GoldHEN + Patches)
-    ↓
-No → Try Method 1 (Apollo/OffAct)
-    ↓
-Still fails? → Try Alternative Methods
-    ↓
-Consider: PC streaming alternatives
-```
 
 ---
 
