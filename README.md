@@ -1,7 +1,7 @@
 # PS4-PS5-Offline-RemotePlay-Connect
- Connecting Chiaki and Chiaki-ng without PSN account
+Connecting Chiaki and Chiaki-ng without PSN account
 
- # PlayStation Remote Play
+# PS4-PS5 Remote Play Guide (Unofficial)
 
 ## ⚠️ IMPORTANT DISCLAIMER & SUCCESS RATE WARNING
 
@@ -9,19 +9,21 @@
 
 ### ⚡ **Success Rate Factors:**
 - **Firmware Version:** Older firmwares work better
-- **Jailbreak** Run latest
-
+- **Jailbreak Version:** Use latest compatible jailbreak
+- **Network Configuration:** Static IP and proper port forwarding help
+- 
 ---
 
 ## 📋 Table of Contents
 - [Prerequisites](#prerequisites)
 - [Success Rate by Console](#success-rate-by-console)
 - [Method 1: PS4/PS5 Offline Activation with Apollo/OffAct](#method-1-ps4ps5-offline-activation-with-apollooffact)
-- [Method 2: PS4/PS5 Official Activation with Appolo/OffAct](#method-2-ps4ps5-official-activation-with-appolooffact)
-- [Method 3: GoldHEN + Patches (Recommended)](#method-3-goldhen--patches-recommended)
-- [Method 4: Alternative Approaches](#method-4-alternative-approaches)
+- [Method 2: PS4/PS5 Official Activation with Apollo/OffAct](#method-2-ps4ps5-official-activation-with-Apollooffact)
+- [Method 3: Alternative Approaches](#method-3-alternative-approaches)
 - [ID Conversion Guide](#id-conversion-guide)
 - [App Configuration](#app-configuration)
+- [Quick Test - Does This Work For You?](#quick-test-does-this-work-for-you)
+- [Common Errors](#common-errors)
 - [Troubleshooting & Community](#troubleshooting--community)
 
 ---
@@ -50,10 +52,9 @@
 ### **PS4 Firmware 9.00 or Lower:**
 - **Remote play Connection:** high success rate
 - **Best method:** GoldHEN latest version
-- **Remote play enabler:** only for 5.05 firmware
 
 ### **PS5 Any Firmware:**
-- **Extremely YMMV (Your Mileage May Vary)**
+- **Status:** Experimental, YMMV (Your Mileage May Vary)
 
 ---
 
@@ -73,6 +74,8 @@
 3. **Enable Remote Play:**
    - Remote Play **OFF** → Run jailbreak → Remote Play **ON** *to avoid crash*
 
+---
+
 ### **PS5 Instructions:**
 1. **Prepare Files:**
    - Download from [PS5 Payload Repository](https://github.com/ps5-payload-dev/websrv/releases)
@@ -84,64 +87,68 @@
    USB Root:
    ├── homebrewloader.pkg
    └── homebrew/
-       └── OffAct/ (OffAct.zip extracted files)
+       └── OffAct/ (extracted files from OffAct.zip)
            /homebrew/OffAct/
-### **Method A (Recommended):**
-   
+
+3. **Transfer Methods:**
+
+#### **Method A (PS5-Xplorer):**
    - Install and launch `Ps5-Xplorer`
    - Copy `homebrew` folder to `/data/` directory
    - Install `homebrewloader.pkg` via Package Installer
 
-### **Method B (FTP - latest Jailbreak):**
-
-   - **If using old jailbreak, `run john-tornblom elfldr` after loading jailbreak
+### **Method B (FTP):**
+   - **Note:** If using old jailbreak, `run john-tornblom elfldr` after jailbreak
    - Use FTP server to transfer `/homebrew/OffAct/` to `/data/`  directory
 
 4. **Activation Attempt:**
-
-   - Install homebrewloader.pkg, Launch `HomebrewLoader`
+   - Install homebrewloader.pkg
+   - Launch `HomebrewLoader`
    - Press `X` to select `OfflineActivator (OffAct)`
    - Press `O` to close dialog
    - When the Offline Account list appears, Select your local offline account.
-   - Press `X` on your local offline account to generate a ranodm 16-digit ID, Note this down for later.
+   - Press `X` on your local account to generate a random 16-digit ID
+   - **Note this ID down for later use**
    - Select done to activate your offline account and Reboot
-   - Download any payload injector or download [NetCat GUI](https://www.sendspace.com/file/5rz4lg)
-   - Download [Remote play payload](https://github.com/idlesauce/ps5-remoteplay-get-pin/releases)
-   - Open NetCat GUi and enter PS5 `ip address` in host box and port num `9021`
+   - **Back to PC**
+   - Download payload injector [NetCat GUI](https://www.sendspace.com/file/5rz4lg)
+   - Open NetCat GUi and enter PS5 `ip address` in host box, (port 9021)
    - Download Remote play payload [rp-get-pin.elf](https://github.com/idlesauce/ps5-remoteplay-get-pin/releases)
    - Browse or drag it inside NetCat GUI and select "Inject Payload".
    - you will get your notification in ps5 after injecting Payload
-   - 8 pin-code and activated offline or official account Encoded ID `(Base64-encoded 8-byte (64-bit) Little-Endian ID)` notification will popup .
-   - You must be in the exploit environment before injecting rp-get-pin.elf (where your ELF loader is listening, port 9021)
-   - or you can also directly retrieve your Encoded ID with Python by typing the command with your 16-digit ID `(Hexadecimal)` from activated ID or 19-digit ID `(Decimal)` from ID grabber with official Account mentioned below.
-   
-   ---
+   - 8 pin-code and Encoded ID `(Base64-encoded 8-byte (64-bit) Little-Endian ID)` notification will popup .
+   - **Note:** Must be in exploit environment before injecting rp-get-pin.elf
 
-## 🛠️ Method 2: PS4/PS5 Official Activation with Appolo/OffAct
-
-### **Official Activation Method for PS4/PS5**
-
-   - **PSN Registeration** create new PSN account and create your username
-   - **Find your ID:** Enter your PSN username into the [PSN ID Grabber](https://psn.flipscreen.games)
-   - **Retrieve your official Account ID** `(19-digit Decimal)` for PSPlay and your Encoded ID `(Base64-encoded 8-byte (64-bit) Little-Endian ID)` for Chiaki-ng or Chiaki from PSN ID grabber
-   - Enter 19-digit ID into the [Decimal to HEX Converter](https://www.rapidtables.com/convert/number/decimal-to-hex.html) to get your **16-digit Hex ID**.
-   - While activating local Account using Apollo or OffAct on your PS4/PS5, replace the "random" User ID with your official **16-digit Hex ID**.
-   - Select **Done** and **Reboot** your console to apply the changes.
-   - You can also convert Decimal to Hex with Python, Mentioned Below at ID Conversion Guide:
-   
-## ⭐ Method 3: GoldHEN + Patches (Only for PS4 5.05)
-
-### **For PS4 Firmware 9.00:**
-1. **Use Latest GoldHEN**
-2. **downlaod Remote Play Enabler ps4ren.bin [PS4REN Repository](https://github.com/SiSTR0/ps4ren)**
-3. **inject payload through NetCat GUI**
-4. **Verification:**
-   - Check if Remote Play appears in Settings
-   - If visible, it's likely working
+   - or you can also directly retrieve your Encoded ID with Python  by typing the command with your 16-digit ID `(Hexadecimal)` from activated ID or 19-digit ID `(Decimal)` from ID grabber with official account mentioned below ID Conversion Guide:
 
 ---
 
-## 🔄 Method 4: Alternative Approaches
+## 🛠️ Method 2: PS4/PS5 Official Activation with Apollo/OffAct
+
+### **Official Activation Method for PS4/PS5**
+
+1. **PSN Registration:**
+- Create new PSN account
+- Set up your username
+
+2. **Find and Retrieve Your ID:**
+- Enter PSN username into [PSN ID Grabber](https://psn.flipscreen.games) service
+- **Official Account ID:** `(19-digit Decimal)` for (for PSPlay (paid))
+- **Encoded ID:** Encoded ID `(Base64-encoded 8-byte (64-bit) Little-Endian ID)` (for Chiaki-ng/Chiaki) from PSN ID grabber
+- **Alternative:** Use PlayStation official app to find account ID
+
+4. **Convert IDs:**
+- Enter 19-digit ID into the [Decimal to HEX Converter](https://www.rapidtables.com/convert/number/decimal-to-hex.html) to get your **16-digit Hex ID**.
+- While activating local account using Apollo/OffAct on your PS4/PS5
+- Replace "random" User ID with your official **16-digit Hex ID**.
+- Select **Done** and **Reboot** to apply changes.
+- You can also convert Decimal to Hex with Python, Mentioned Below at ID Conversion Guide:
+   
+---
+
+## 🔄 Method 3: Alternative Approaches
+
+### **If Methods 1-3 Fail:**
 
 #### **1. Local Game Streaming (Reliable Alternative):**
 - **Moonlight + Sunshine:** Stream from gaming PC
@@ -149,7 +156,7 @@
 - **Parsec:** Low-latency desktop streaming
 
 #### **2. Paid Alternative:**
-- **PSPlay:** more lenient with activation
+- **PSPlay (Paid):** More lenient with activation
 - **Repl4y:** Another third-party app
 
 ---
@@ -157,15 +164,11 @@
 ## 🔢 ID Conversion Guide 
 
 ### **Required Software:**
-
-  - **Python latest `version`** - Download from:
-  - [Official Site](https://www.python.org/downloads/)
-  - Microsoft Store (Windows)
+- **Python latest `version`**
+- [Official Site](https://www.python.org/downloads/)
+- Microsoft Store (Windows)
 
 ### **Convert Activated Official and Offline Account for Connecting Remote Play**
-
-  - [For Chiaki-ng/Chiaki need Encoded ID (Base64-encoded 8-byte (64-bit) Little-Endian ID)](#for-chiaki-ng-chiaki-need-encoded-id-base64-encoded-8-byte-64-bit-little-endian-id)
-  - [For PSPlay (Paid) need 19-digit ID](#for-psplay-paid-need-19-digit-id)
 
 ##  For Chiaki-ng/Chiaki need Encoded ID (Base64-encoded 8-byte (64-bit) Little-Endian ID)
 
@@ -233,9 +236,9 @@ print(base64.b64encode(decimal_id.to_bytes(8, 'little')).decode())
 ...
 782rkHhWNBI=
 ```
-#### 2. Convert Decimal (19-digit) to Haxadecimal (16-digit) from Python or Decimal to Hex converter
+#### 2. Convert Decimal (19-digit) to Hexadecimal (16-digit) from Python or Decimal to Hex converter
 
-  - This is for activating your PS4/PS5 with Apolo or OffAct retreived from [PSN ID Grabber](https://psn.flipscreen.games) with your official PSN account
+  - This is for activating your PS4/PS5 with Apolo or OffAct retrieved from [PSN ID Grabber](https://psn.flipscreen.games) with your official PSN account
   - Use this [Decimal to Hex Converter](https://www.rapidtables.com/convert/number/hex-to-decimal.html) OR Python:
 
 ```python
@@ -298,7 +301,46 @@ PS4 Fat/Slim: Max 720p
 
 ---
 
+## 🧪 Quick Test - Does This Work For You?
+
+**Step 1 (Before Jailbreak):**
+1. Settings → Remote Play → Enable
+2. If it works and shows PIN: ✅ Good chance
+3. If it crashes/errors: ❌ Low chance
+
+**Step 2 (After Jailbreak):**
+1. Same settings menu
+2. If crashes: Jailbreak interfering
+3. Solution: Try connection BEFORE jailbreak
+
+## 🧪 Quick Test - Does This Work For You?
+
+**Step 1 (Before Jailbreak):**
+1. Settings → Remote Play → Enable
+2. If it works and shows PIN: ✅ Good chance
+3. If it crashes/errors: ❌ Low chance
+
+**Step 2 (After Jailbreak):**
+1. Same settings menu
+2. If crashes: Jailbreak interfering
+3. Solution: Try connection BEFORE jailbreak
+
+---
+
+## ❌ Common Errors
+
+**Error: "Registration Failed" (Chiaki)**
+- Cause: Wrong Encoded ID
+- Fix: Double-check Python conversion
+
+**Error: "Cannot Connect to Console"**
+- Cause: Jailbreak blocking
+- Fix: Try connection without jailbreak first
+
+---
+
 ## 🔍 Troubleshooting & Community
+---
 
 ### **Common "It Doesn't Work" Scenarios:**
 
@@ -345,14 +387,6 @@ Include in your help request:
 
 ---
 
-## 📚 Additional Resources
-
-### **Working Proof (For Reference):**
-- [Video Tutorial - Moded Warfare]([https://www.youtube.com/watch?v=EXAMPLE](https://www.youtube.com/@MODDEDWARFARE))
-- [PSX-Place Success Thread](https://www.psx-place.com/threads/EXAMPLE)
-
----
-
 ## ✅ Final Reality Check
 
 ### **Before You Invest Time:**
@@ -376,7 +410,7 @@ Include in your help request:
 
 ---
 
-## 🎯 Quick Start Decision Tree
+___
 
 ---
 
