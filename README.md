@@ -8,9 +8,10 @@ Connecting Chiaki and Chiaki-ng without PSN account
 ## PS4-PS5 Remote Play Guide (Unofficial)
 
 **READ THIS FIRST:** Make sure to create a backup for your games/apps save file. This guide documents methods that **have worked for some users on specific setups**, but **success is NOT guaranteed**. These methods bypass Sony's official activation process.
-```md
+```
 Results vary widely based on:
 ```
+
 ## ⚡ **Success Rate Factors:**
 - **Firmware Version:** Older firmwares work better
 - **Jailbreak Version:** Use latest compatible jailbreak
@@ -22,7 +23,7 @@ Results vary widely based on:
 - [Prerequisites](#prerequisites)
 - [Success Rate by Console](#success-rate-by-console)
 - [Method 1: PS4/PS5 Offline Activation with Apollo/OffAct](#method-1-ps4ps5-offline-activation-with-apollooffact)
-- [Method 2: PS4/PS5 Official Activation with Apollo/OffAct](#method-2-ps4ps5-official-activation-with-Apollooffact)
+- [Method 2: PS4/PS5 Official Activation with Apollo/OffAct](#method-2-ps4ps5-official-activation-with-apollooffact)
 - [Method 3: Alternative Approaches](#method-3-alternative-approaches)
 - [ID Conversion Guide](#id-conversion-guide)
 - [App Configuration](#app-configuration)
