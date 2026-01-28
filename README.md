@@ -365,8 +365,11 @@ Include in your help request:
 - Wait for better exploits/methods
 
 ---
+
 **Repository Value:** This guide serves as a comprehensive collection of unofficial/official Remote Play on jailbroken consoles. It provides realistic expectations while offering multiple approaches for different scenarios.
+
 ---
+
 ## IMPORTANT SAFETY AND BACKUP WARNING
 
 ### **READ BEFORE PROCEEDING:**
@@ -380,5 +383,7 @@ Include in your help request:
 - The entire jailbreak community thrives on developer contributions. Consider donating or supporting their work when you can
 Jailbreak scene evolves constantly. What doesn't work today might work tomorrow with new exploits or patches. Regularly check community forums for updates and breakthroughs.
 ---
-📅 **Release:** 15/01/2026 | 🔄 **Updated:** 27/01/2026 | ℹ️ **Status:** Info/Educational
+📅**Release Date:** 15/01/2026  
+🔄**Last Updated:** 27/01/2026  
+ℹ️**Status:** Informational/Educational Material
 ---
