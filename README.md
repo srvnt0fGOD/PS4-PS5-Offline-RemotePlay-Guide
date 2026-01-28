@@ -6,7 +6,6 @@ Connecting Chiaki and Chiaki-ng without PSN account
 ## PS4-PS5 Remote Play Guide (Unofficial)
 
 **READ THIS FIRST:** Make sure to create a backup for your games/apps save file. This guide documents methods that **have worked for some users on specific setups**, but **success is NOT guaranteed**. These methods bypass Sony's official activation process.
-`Results vary widely based on:`
 
 ## ⚡ **Success Rate Factors:**
 - **Firmware Version:** Older firmwares work better
