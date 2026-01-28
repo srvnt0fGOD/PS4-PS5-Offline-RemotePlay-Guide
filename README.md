@@ -7,14 +7,14 @@ Connecting Chiaki and Chiaki-ng without PSN account
 
 **READ THIS FIRST:** Make sure to create a backup for your games/apps save file. This guide documents methods that **have worked for some users on specific setups**, but **success is NOT guaranteed**. These methods bypass Sony's official activation process.
 
-## ⚡ **Success Rate Factors:**
+## **Success Rate Factors:**
 - **Firmware Version:** Older firmwares work better
 - **Jailbreak Version:** Use latest compatible jailbreak
 - **Network Configuration:** Static IP and proper port forwarding help
 
 ---
 
-## 📋 Table of Contents
+## Table of Contents
 - [Prerequisites](#prerequisites)
 - [Success Rate by Console](#success-rate-by-console)
 - [Method 1: PS4/PS5 Offline Activation with Apollo/OffAct](#method-1-ps4ps5-offline-activation-with-apollooffact)
@@ -28,7 +28,7 @@ Connecting Chiaki and Chiaki-ng without PSN account
 
 ---
 
-## 🎮 Prerequisites
+## Prerequisites
 
 ### **For Both PS4 & PS5:**
 1. **Jailbroken console** with latest exploit
@@ -42,11 +42,11 @@ Connecting Chiaki and Chiaki-ng without PSN account
 - **5GHz WiFi** for 1080p/60fps streaming
 - **2.4GHz WiFi** use 720p/30fps for stable connection
 - **PS4 Fat/Slim** maximum Remote Play resolution: 720p
-- **Port forwarding may help** (TCP 9295, UDP 9296-9297)
+- **Port forwarding may help** (TCP 9295, UDP 9296-9297, TCP or UDP 9295-9297)
 
 ---
 
-## 📊 Success Rate by Console
+## Success Rate by Console
 
 ### **PS4 Firmware 9.00 or Lower:**
 - **Remote play connection:** high success rate
@@ -57,7 +57,7 @@ Connecting Chiaki and Chiaki-ng without PSN account
 
 ---
 
-## 🔧 Method 1: PS4/PS5 Offline Activation with Apollo/OffAct
+## Method 1: PS4/PS5 Offline Activation with Apollo/OffAct
 
 ### **PS4 Instructions:**
 1. **Download Apollo Save Tool:**
@@ -124,7 +124,7 @@ Connecting Chiaki and Chiaki-ng without PSN account
 
 ---
 
-## 🛠️ Method 2: PS4/PS5 Official Activation with Apollo/OffAct
+## Method 2: PS4/PS5 Official Activation with Apollo/OffAct
 
 ### **Official Activation Method for PS4/PS5**
 
@@ -147,7 +147,7 @@ Connecting Chiaki and Chiaki-ng without PSN account
 - 
 ---
 
-## 🔄 Method 3: Alternative Approaches
+## Method 3: Alternative Approaches
 
 <details>
 <summary><strong>👉Click to read Alternative Approaches</strong></summary>
@@ -166,7 +166,7 @@ Connecting Chiaki and Chiaki-ng without PSN account
 
 ---
 
-## 🔢 ID Conversion Guide 
+## ID Conversion Guide 
 
 ### **Required Software:**
 - **Python latest Version**
@@ -217,7 +217,7 @@ print(f"19-digit Decimal ID: {decimal_id}")
 ```
 ---
 
-### 🎯 BONUS: Additional Conversions
+### BONUS: Additional Conversions
 
 #### 1. **Convert Decimal (19-digit) to Base64 Encoded ID for Chiaki-ng/Chiaki**
 - Retrieve Decimal (19-digit) Official PSN ID from [PSN ID Grabber](https://psn.flipscreen.games) 
@@ -257,7 +257,7 @@ print(f"16-digit Hex ID: {hex_id}")
 
 ---
 
-## 📱 App Configuration
+## App Configuration
 
 ### **Chiaki-ng/Chiaki Setup:**
 - **Download:** [chiaki-ng](https://github.com/streetpea/chiaki-ng) `or`
@@ -293,7 +293,7 @@ print(f"16-digit Hex ID: {hex_id}")
 
 ---
 
-## 🔍 Troubleshooting and Community
+## Troubleshooting and Community
 
 ### **Common Issues & Solutions:**
 
@@ -320,7 +320,7 @@ print(f"16-digit Hex ID: {hex_id}")
 
 ---
 
-### 💬 Community & Support
+### Community & Support
 
 #### **Where to Get Help:**
 - **Reddit:** r/ps4homebrew, r/ps5homebrew
@@ -336,7 +336,7 @@ Include in your help request:
 
 ---
 
-## 📚 Additional Resources
+## Additional Resources
 
 ### **Video Tutorials:**
 - [Modded Warfare YouTube](https://www.youtube.com/@MODDEDWARFARE)
@@ -350,7 +350,7 @@ Include in your help request:
 
 ---
 
-### ✅ Final Reality Check
+### Final Reality Check
 
 #### **If It Works:**
 - Document your exact setup
@@ -367,7 +367,7 @@ Include in your help request:
 ---
 **Repository Value:** This guide serves as a comprehensive collection of unofficial/official Remote Play on jailbroken consoles. It provides realistic expectations while offering multiple approaches for different scenarios.
 ---
-## ⚠️ IMPORTANT SAFETY AND BACKUP WARNING
+## IMPORTANT SAFETY AND BACKUP WARNING
 
 ### **READ BEFORE PROCEEDING:**
 
@@ -379,7 +379,6 @@ Include in your help request:
 
 - The entire jailbreak community thrives on developer contributions. Consider donating or supporting their work when you can
 Jailbreak scene evolves constantly. What doesn't work today might work tomorrow with new exploits or patches. Regularly check community forums for updates and breakthroughs.
-  ```
-  Last Updated: [27/01/2026]
-  Status: Informational/Educational Material
-  ```
+---
+📅 **Release:** 15/01/2026 | 🔄 **Updated:** 27/01/2026 | ℹ️ **Status:** Info/Educational
+---
