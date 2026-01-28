@@ -1,16 +1,12 @@
 # PS4-PS5-Offline-RemotePlay-Connect
 Connecting Chiaki and Chiaki-ng without PSN account
 
-**⚠️ DISCLAIMER:** This guide is for educational and informational purpose only. Console modification may violate Sony's ToS, void warranties, and risk bans/data loss. You assume all risks. Always backup data. Use at your own discretion; the author provides no warranties.
-- Always backup data first.
-
+**⚠️ DISCLAIMER:** This guide is for educational and informational purpose only. Console modification may violate Sony's ToS, void warranties, and risk bans/data loss. You assume all risks. Always back up data. Use at your own discretion; the author provides no warranties.
 
 ## PS4-PS5 Remote Play Guide (Unofficial)
 
 **READ THIS FIRST:** Make sure to create a backup for your games/apps save file. This guide documents methods that **have worked for some users on specific setups**, but **success is NOT guaranteed**. These methods bypass Sony's official activation process.
-```
-Results vary widely based on:
-```
+`Results vary widely based on:`
 
 ## ⚡ **Success Rate Factors:**
 - **Firmware Version:** Older firmwares work better
@@ -54,7 +50,7 @@ Results vary widely based on:
 ## 📊 Success Rate by Console
 
 ### **PS4 Firmware 9.00 or Lower:**
-- **Remote play Connection:** high success rate
+- **Remote play connection:** high success rate
 - **Best method:** GoldHEN latest version
 
 ### **PS5 Any Firmware:**
@@ -92,7 +88,6 @@ Results vary widely based on:
    ├── homebrewloader.pkg
    └── homebrew/
        └── OffAct/ (extracted files from OffAct.zip)
-       /homebrew/OffAct/
    ```
 
 ---
@@ -101,7 +96,7 @@ Results vary widely based on:
 
 #### **Method A (PS5-Xplorer):**
    - Launch `Ps5-Xplorer`
-   - Copy `homebrew` folder to `/data/` directory
+   - Copy `homebrew` folder `/homebrew/OffAct/` to `/data/` directory
    - Install `homebrewloader.pkg` via Package Installer
 
 #### **Method B (FTP):**
@@ -277,7 +272,7 @@ print(f"16-digit Hex ID: {hex_id}")
 - **PS5:** Select PS5
 
 **If Remote Play Connection FAILED**
-- Activate PS4/PS5 with Apolo/OffAct using following ID's rather than the generated random ID: 
+- Activate PS4/PS5 with Apollo/OffAct using following IDs rather than the generated random ID: 
   - Try "123456789ABCDEF0"
   - Try "0000000000000000"
   - Try "ffffffffffffffff"
