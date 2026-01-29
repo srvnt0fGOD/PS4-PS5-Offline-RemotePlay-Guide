@@ -1,13 +1,17 @@
-# PS4-PS5-Offline-RemotePlay-Connect
-*Activating PS4/PS5 Local account (without PSN) with Apollo/OffAct*
-*Connecting Chiaki and Chiaki-ng without PSN*
-*Also included official activation with Apollo/OffAct*
+# PS4-PS5-Offline-RemotePlay-Guide
 
 **⚠️ DISCLAIMER:** This guide is for educational and informational purpose only. Console modification may violate Sony's ToS, void warranties, and risk bans/data loss. You assume all risks. Always back up data. Use at your own discretion; the author provides no warranties.
 
 ## PS4-PS5 Remote Play Guide (Unofficial)
+- *Activating PS4/PS5 Local account (without PSN) with Apollo/OffAct*
+- *Connecting Chiaki and Chiaki-ng without PSN*
+- *Also included official activation and remote play connection method with Apollo/OffAct*
 
 **READ THIS FIRST:** Make sure to create a backup for your games/apps save file. This guide documents methods that **have worked for some users on specific setups**, but **success is NOT guaranteed**. These methods bypass Sony's official activation process.
+- **BEFORE STARTING** Remember these:
+- **For Offline and Official Activation and Remote Play Connection:**
+  -You need 16-degit (Hex) , 19-digit (Decimal) and base64 IDs.
+- You can find how to convert these IDs and where to find them below at **Activation** and **ID Conversion Guide**.
 
 ## **Success Rate Factors:**
 - **Firmware Version:** Older firmwares work better
