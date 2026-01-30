@@ -13,11 +13,6 @@
   -You need 16-degit (Hex) , 19-digit (Decimal) and base64 IDs.
 - You can find how to convert these IDs and where to find them below at **Activation** and **ID Conversion Guide**.
 
-## **Success Rate Factors:**
-- **Firmware Version:** Older firmwares work better
-- **Jailbreak Version:** Use latest compatible jailbreak
-- **Network Configuration:** Static IP and proper port forwarding help
-
 ---
 
 ## Table of Contents
@@ -52,23 +47,12 @@
 
 ---
 
-## Success Rate by Console
-
-### **PS4 Firmware 9.00 or Lower:**
-- **Remote play connection:** high success rate
-- **Best method:** GoldHEN latest version
-
-### **PS5 Any Firmware:**
-- **Status:** Experimental, YMMV (Your Mileage May Vary)
-
----
-
 ## Method 1: PS4/PS5 Offline Activation with Apollo/OffAct
 
 ### **PS4 Instructions:**
 1. **Download Apollo Save Tool:**
  - [GitHub Repository](https://github.com/bucanero/apollo-ps4)
- - Install via USB or network
+ - Install via USB or ftp
 
 2. **Attempt Activation:**
  ```
@@ -105,29 +89,29 @@
 - Install `homebrewloader.pkg` via Package Installer
 
 #### **Method B (FTP):**
-- **Note:** If using old jailbreak, `run john-tornblom elfldr` after jailbreak
+- **Note:** If using old jailbreak, run `john-tornblom elfldr` after jailbreak
 - Use FTP server to transfer `/homebrew/OffAct/` to `/data/`  directory
 
- 1. **Activation Attempt:**
-  - Install homebrewloader.pkg
-  - Launch `HomebrewLoader`
-  - Press `X` to select `OfflineActivator (OffAct)`
-  - Press `O` to close dialog
-  - When the Offline Account list appears, Select your local offline account.
-  - Press `X` on your local account to generate a random 16-digit ID
-  - **Note this ID down for later use**
-  - Select done to activate your offline account and Reboot
-  - **Back to PC**
-  - Download payload injector [NetCat GUI](https://www.sendspace.com/file/5rz4lg)
-  - Open `NetCat GUI`  and enter PS5 `ip address` in host box, (port 9021)
-  - Download Remote play payload [rp-get-pin.elf](https://github.com/idlesauce/ps5-remoteplay-get-pin/releases)
-  - Browse or drag it inside `NetCat GUI` and select "Inject Payload".
-  - You will receive a notification on the PS5 after injecting Payload.
-  - An 8-digit PIN code and Encoded ID `(Base64-encoded 8-byte (64-bit) Little-Endian ID)` notification will popup .
-  - **Note:** Must be in exploit environment before injecting rp-get-pin.elf
+1. **Activation Attempt:**
+ - Install homebrewloader.pkg
+ - Launch `HomebrewLoader`
+ - Press `X` to select `OfflineActivator (OffAct)`
+ - Press `O` to close dialog
+ - When the Offline Account list appears, Select your local offline account.
+ - Press `X` on your local account to generate a random 16-digit ID
+ - **Note this ID down for later use**
+ - Select done to activate your offline account and Reboot
+ - **Back to PC**
+ - Download payload injector [NetCat GUI](https://www.sendspace.com/file/5rz4lg)
+ - Open `NetCat GUI` and enter PS5 `ip address` in host box, (port 9021)
+ - Download Remote play payload [rp-get-pin.elf](https://github.com/idlesauce/ps5-remoteplay-get-pin/releases)
+ - Browse or drag it inside `NetCat GUI` and select "Inject Payload".
+ - You will receive a notification on the PS5 after injecting Payload.
+ - An 8-digit PIN code and Encoded ID `(Base64-encoded 8-byte (64-bit) Little-Endian ID)` notification will popup .
+ - **Note:** Must be in exploit environment before injecting rp-get-pin.elf
 
-  - or you can also directly retrieve your Encoded ID with Python by typing the command with your 16-digit ID `(Hexadecimal)` from activated ID
-  - or 19-digit ID `(Decimal)` from ID grabber with (official account) mentioned below at ID Conversion Guide:
+ - or you can also directly retrieve your Encoded ID with Python by typing the command with your activated 16-digit ID `(Hexadecimal)`
+ - or you can convert it from 19-digit ID `(Decimal)` from ID grabber with (official PSN account) mentioned below at ID Conversion Guide:
 
 ---
 
@@ -139,7 +123,7 @@
  - Create new PSN account
  - Set up your username
 
-2. **Find and Retrieve Your ID:**
+2. **Find and Retrieve Your Official PSN IDs:**
  - Enter PSN username into [PSN ID Grabber](https://psn.flipscreen.games)
  - **Encoded ID:** Encoded ID `(Base64-encoded 8-byte (64-bit) Little-Endian ID)` (for Chiaki-ng/Chiaki) from PSN ID grabber
  - **Official Account ID:** `(19-digit Decimal)`(for PSPlay – paid)
@@ -149,9 +133,9 @@
  - Activating the Local Account of PS4/PS5 with Official PSN retrieved from ID graber
  - Enter Official 19-digit ID into the [Decimal to HEX Converter](https://www.rapidtables.com/convert/number/decimal-to-hex.html) to get your **16-digit Hex ID**.
  - While activating local account using Apollo/OffAct on your PS4/PS5
- - Replace "random" User ID with your official **16-digit Hex ID** from converter.
+ - Replace "random" User 16-digit ID with your official **16-digit Hex ID** from converter.
  - Select **Done** and **Reboot** to apply changes.
- - You can also convert Decimal to Hex with Python, Mentioned Below at ID Conversion Guide: 
+ - You can also convert Decimal to Hex with Python, Mentioned Below at ID Conversion Guide, Bonus Heading: 
 
 ---
 
@@ -182,7 +166,8 @@
 - Microsoft Store (Windows)
 
 ### **Convert Activated Official or Offline Account from PS4/PS5 for Remote Play**
-### Chiaki-ng/Chiaki need Encoded ID (Base64-encoded 8-byte (64-bit) Little-Endian ID)
+ - Chiaki-ng/Chiaki need Encoded ID (Base64-encoded 8-byte (64-bit) Little-Endian ID)
+ - Converted from **Python**
 
 ### Conversion Methods for Chiaki-ng/Chiaki:
 #### **Convert PS4/PS5 Activated User Account Hexadecimal (16-digit) to Base64 Encoded ID for Chiaki-ng/Chiaki**
@@ -225,11 +210,12 @@ print(f"19-digit Decimal ID: {decimal_id}")
 
 ---
 
-### BONUS: Additional Conversions
+### BONUS: Additional Conversions for Official PSN wIth Python
 
-#### 1. **Convert Decimal (19-digit) to Base64 Encoded ID for Chiaki-ng/Chiaki**
- - Retrieve Decimal (19-digit) Official PSN ID from [PSN ID Grabber](https://psn.flipscreen.games) 
-
+#### 1. **Convert Official PSN Decimal ID (19-digit) to Base64 Encoded ID for Chiaki-ng/Chiaki**
+ - Retrieve Decimal (19-digit) Official PSN ID from [PSN ID Grabber](https://psn.flipscreen.games)
+ - You can directly grab base64 encoded ID from ID grabber or for verification use Python to check if it's matching your encoded ID from ID graber
+ - Just use the same Official PSN 19-digit decimal ID from ID grabber in Python:
 `Python`
 ```python
 import base64
@@ -245,12 +231,12 @@ print(base64.b64encode(decimal_id.to_bytes(8, 'little')).decode())
 782rkHhWNBI=
 ```
 
-#### 2. **Convert Decimal (19-digit) to Hexadecimal (16-digit) from Python or Decimal to Hex converter**
- - After activating PS4/PS5 with Apollo/OffAct retrieved Decimal (19-digit) from [PSN ID Grabber](https://psn.flipscreen.games) with your official PSN account
- - Use this [Decimal to Hex Converter](https://www.rapidtables.com/convert/number/hex-to-decimal.html) OR Python:
+#### 2. **Convert Decimal (19-digit) to Hexadecimal (16-digit) from Python**
+ - This for activaing your PS4/PS5 with Apollo/OffAct by activating it with your official PSN account by using Python
+ - Retrieved Decimal (19-digit) from [PSN ID Grabber](https://psn.flipscreen.games) with your official PSN account
 `python`
 ```python
-decimal_id = 1311768467294899695
+decimal_id = 1311768467294899695 your 19-digit Decimal ID
 hex_id = f'"{decimal_id:016X}"'
 print(f"16-digit Hex ID: {hex_id}")
 ```
@@ -283,7 +269,7 @@ print(f"16-digit Hex ID: {hex_id}")
   - Try: "123456789ABCDEF0"
   - Try: "0000000000000000"
   - Try: "ffffffffffffffff"
-  - Try: "DEADBEEFCAFEBABE"
+  - try: "srvnt0fGOD123456"
 
 ### **PSPlay (Paid) Setup:**
 **Downlaod:** [PSPlay Repository](https://github.com/streamingdv/PSPlay-Application-Hosting)
@@ -293,11 +279,11 @@ print(f"16-digit Hex ID: {hex_id}")
 - Enter: Console IP + 19-digit Decimal ID
 - Enter: 8-digit PIN
 
-### **Performance Settings:**
-- **Ethernet:** 1080p @ 60fps
-- **5GHz WiFi:** 1080p @ 60fps
-- **2.4GHz WiFi:** 720p @ 30fps
-- **PS4 Fat/Slim:** Maximum 720p
+#### **Performance Settings:**
+ - **Ethernet:** 1080p @ 60fps
+ - **5GHz WiFi:** 1080p @ 60fps
+ - **2.4GHz WiFi:** 720p @ 30fps
+ - **PS4 Fat/Slim:** Maximum 720p
 
 ---
 
@@ -306,16 +292,16 @@ print(f"16-digit Hex ID: {hex_id}")
 ### **Common Issues & Solutions:**
 
 #### **Issue 1: Activation succeeds but can't connect**
-- Check firewall settings
-- Verify static IP assignment
-- Try different port settings
-- Test with phone hotspot (isolate network issues)
+ - Check firewall settings
+ - Verify static IP assignment
+ - Try different port settings
+ - Test with hotspot (isolate network issues)
 
 #### **Issue 2: Intermittent Connections**
-- Typical for unofficial methods
-- Keep Remote Play disabled until ready to stream
-- Jailbreak patches interfering
-- Re-run jailbreak before each session
+ - Typical for unofficial methods
+ - Keep Remote Play disabled until ready to stream
+ - Jailbreak patches interfering
+ - Re-run jailbreak before each session
 
 ---
 
@@ -354,7 +340,7 @@ Include in your help request:
 
 ### **Tools & Utilities:**
 - **GoldHEN Cheat Manager:** Includes system patches
-- **Al-Azif DNS:** For older firmware jailbreaks
+- In latest Jailbreak you can downlaod and update **Patches** and **Plugins** directly from Goldhen exploit.
 
 ---
 
