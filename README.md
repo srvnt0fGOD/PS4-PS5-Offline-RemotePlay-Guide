@@ -336,7 +336,7 @@ Include in your help request:
 - [Modded Warfare YouTube](https://www.youtube.com/@MODDEDWARFARE)
 
 ### **Community Discussions:**
-- [PSX-Place Remote Play Thread](https://www.psx-place.com/threads/remote-play-on-jailbroken-consoles.XXXXX/)
+- [PSX-Place Remote Play Thread](https://www.psx-place.com/threads/)
 
 ### **Tools & Utilities:**
 - **GoldHEN Cheat Manager:** Includes system patches
