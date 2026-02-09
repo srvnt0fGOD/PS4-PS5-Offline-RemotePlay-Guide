@@ -266,10 +266,10 @@ print(f"16-digit Hex ID: {hex_id}")
 
 **If Remote Play Connection FAILED**
 - Activate PS4/PS5 with Apollo/OffAct using following IDs rather than the generated random ID: 
-  - Try: "123456789ABCDEF0"
+  - Try: "1234567890ABCDEF"
   - Try: "0000000000000000"
   - Try: "ffffffffffffffff"
-  - try: "srvnt0fGOD123456"
+  - Try: "srvnt0fGOD123456"
 
 ### **PSPlay (Paid) Setup:**
 **Downlaod:** [PSPlay Repository](https://github.com/streamingdv/PSPlay-Application-Hosting)
